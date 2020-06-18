@@ -6,7 +6,7 @@
 /*   By: tcosse <tcosse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 19:46:41 by tcosse            #+#    #+#             */
-/*   Updated: 2020/06/12 14:12:15 by dwi              ###   ########.fr       */
+/*   Updated: 2020/06/16 16:28:58 by tcosse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ typedef	struct	s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
-
-//typedef unsigned int size_t;
 
 int				ft_atoi(const char *str);
 int				ft_isalnum(int c);

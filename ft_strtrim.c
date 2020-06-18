@@ -6,7 +6,7 @@
 /*   By: tcosse <tcosse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 15:45:36 by tcosse            #+#    #+#             */
-/*   Updated: 2020/05/25 11:45:25 by dwi              ###   ########.fr       */
+/*   Updated: 2020/06/16 15:47:32 by tcosse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	l = 0;
 	s1 = start_cut(s1, set);
+	if (ft_strlen(s1) == 0)
+		return (ft_strdup(""));
 	i = size_str(s1, set);
 	if (!(str = (char *)malloc(sizeof(char) * i + 1)))
 		return (0);
