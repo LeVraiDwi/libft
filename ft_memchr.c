@@ -6,7 +6,7 @@
 /*   By: tcosse <tcosse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 16:05:57 by tcosse            #+#    #+#             */
-/*   Updated: 2020/06/26 14:33:18 by tcosse           ###   ########.fr       */
+/*   Updated: 2020/06/29 14:07:58 by tcosse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	str = (unsigned char *)s;
 	while (n--)
 	{
-		if (*str == (unsigned char)c)
-			return (str);
+		if (*str == c)
+			return ((void *)str);
 		str++;
 	}
 	return (0);
