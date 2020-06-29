@@ -6,7 +6,7 @@
 /*   By: tcosse <tcosse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 17:16:48 by tcosse            #+#    #+#             */
-/*   Updated: 2020/06/16 16:44:14 by tcosse           ###   ########.fr       */
+/*   Updated: 2020/06/29 16:03:17 by tcosse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ int		count(char const *s, char c)
 	return (i);
 }
 
+int		cleantab(char **tab, char *buf)
+{
+	free(tab);
+	free(buf);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -45,8 +52,7 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	if (!s || !(buf = (char *)malloc(sizeof(char *) * ft_strlen(s))))
 		return (0);
-	i = count(s, c);
-	if (!(strtab = (char **)malloc(sizeof(char *) * (i + 1))))
+	if (!(strtab = (char **)malloc(sizeof(char *) * (count(s, c) + 1))))
 		return (0);
 	while (*s)
 	{
@@ -57,7 +63,8 @@ char	**ft_split(char const *s, char c)
 		while (*s && *s == c)
 			s++;
 		if (*buf)
-			strtab[j++] = ft_strdup(buf);
+			if (!(strtab[j++] = ft_strdup(buf)))
+				return ((char **)cleantab);
 	}
 	strtab[j] = NULL;
 	free(buf);
