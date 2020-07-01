@@ -35,7 +35,7 @@ int		count(char const *s, char c)
 	return (i);
 }
 
-int		cleantab(char **tab, char *buf)
+char	**cleantab(char **tab, char *buf)
 {
 	free(tab);
 	free(buf);
@@ -64,7 +64,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*buf)
 			if (!(strtab[j++] = ft_strdup(buf)))
-				return ((char **)cleantab);
+				return ((char **)cleantab(tab, buf));
 	}
 	strtab[j] = NULL;
 	free(buf);
