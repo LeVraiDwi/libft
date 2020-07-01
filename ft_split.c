@@ -64,7 +64,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*buf)
 			if (!(strtab[j++] = ft_strdup(buf)))
-				return ((char **)cleantab(tab, buf));
+				return (cleantab(tab, buf));
 	}
 	strtab[j] = NULL;
 	free(buf);
