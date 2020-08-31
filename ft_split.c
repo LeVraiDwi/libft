@@ -6,7 +6,7 @@
 /*   By: tcosse <tcosse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 17:16:48 by tcosse            #+#    #+#             */
-/*   Updated: 2020/06/29 16:03:17 by tcosse           ###   ########.fr       */
+/*   Updated: 2020/08/31 15:47:04 by tcosse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*buf)
 			if (!(strtab[j++] = ft_strdup(buf)))
-				return (cleantab(tab, buf));
+				return (cleantab(strtab, buf));
 	}
 	strtab[j] = NULL;
 	free(buf);
