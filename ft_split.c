@@ -59,9 +59,10 @@ int	ft_is_buff(char **strtab, char *buf, int *j)
 {
 	if (*buf)
 	{
-		strtab[*j++] = ft_strdup(buf);
-		if (!strtab[*j++])
+		strtab[*j] = ft_strdup(buf);
+		if (!strtab[*j])
 			return (cleantab(strtab, buf));
+		*j = *j + 1;
 	}
 	return (1);
 }
